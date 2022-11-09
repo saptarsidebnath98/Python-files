@@ -1,25 +1,19 @@
+#I have created a program that calculates the sum and tells the score
+
+import random
+
+score = 0
+
 while(True):
-    print('''What do you want to do?\n
-    Press (+) for SUM\n
-    Press (-) for SUBSTRACTION\n
-    Press (/) for DIVISION\n 
-    Press (*) for MULTIPLICATION\n   
-    Press (e) for EXIT:\n ''')
-    a = input()
-    if a == 'e':
-        quit()
+    a = random.randint(1, 100)
+    b = random.randint(1, 100)
+    
+    actual_sum = a + b
+
+    user_sum = int(input(f"{a} + {b} \n"))
+    if user_sum == actual_sum:
+        score += 1
     else:
-        b = int(input("Enter the first number: \n"))
-        c = int(input("Enter the second number: \n"))
-        if a == '+':
-            d = b + c
-            print(f"{b} {a} {c} = {d}")
-        elif a == '-':
-            d = b - c
-            print(f"{b} {a} {c} = {d}")
-        elif a == '/':
-            d = b / c
-            print(f"{b} {a} {c} = {d}")
-        elif a == '*':
-            d = b * c
-            print(f"{b} {a} {c} = {d}")
+        print(f"Your score is: {score}")
+        exit()
+    
